@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Opdracht-A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/javascript.js"></script>
+  </head>
+  <body ng-app="">
+    <div class="mijnheader">
+        <hr>
+        <div class="center" style="margin-left:-100px;">
+          <button type="submit" class="header"><a href="opdrachtB.html">Opdracht-B</a></button>
+          <button type="submit" class="header"><a href="opdrachtC.html">Opdracht-C</a></button>
+          <button type="submit" class="header"><a href="eindopdracht.html">Eindopdracht</a></button>
+        </div>
+        <hr>
+    </div>
+    <div class="content">
+      <div class="center">
+        <img src="img/vuur2.png" class="opdr_img">
+          <div class="kop">Opdracht A</div>
+        <img src="img/vuur4.png" class="opdr_img">
+      </div>
+
+      <div class="form">
+        <div class="center">
+          <br><h1>Formulier</h1><br>
+        </div>
+        <form name="form" formGroup="form" novalidate>
+          <label>Voornaam </label>
+            <input type="text" name="voor" id="voor" placeholder="voornaam" ng-pattern="/^[a-z]{1}[a-z]/i" ng-model="voor" required>
+            <div class="grijs"><span ng-show="false">fout</span></div>
+            <div class="error" ng-show="form.voor.$dirty && form.voor.$invalid || form.$submitted && form.voor.$invalid ">
+                 <span class="error">Voornaam is niet goed</span>
+            </div><br>
+          <label>Achternaam </label>
+            <input type="text" name="achter" id="achter" placeholder="Achternaam" ng-pattern="/^[a-z]{1}[a-z]/i" ng-model="achter" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.achter.$dirty && form.achter.$invalid || form.$submitted && form.achter.$invalid ">
+                 <span class="error">Achternaam is niet goed</span>
+            </div><br>
+          <label>Adres </label>
+            <input type="text" name="adres" id="adres" placeholder="Adres" ng-model="adres"
+            ng-pattern="/ ?[a-z]* ?[0-9]*/ig" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.adres.$dirty && form.adres.$invalid || form.$submitted && form.adres.$invalid ">
+                 <span class="error">Adres is niet goed</span>
+            </div><br>
+          <label>Huisnummer</label>
+            <input type="number" name="huis" id="huis" placeholder="huisnummer" ng-model="num" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.huis.$dirty && form.huis.$invalid || form.$submitted && form.huis.$invalid ">
+                 <span class="error">Huisnummer is niet goed</span>
+            </div><br>
+          <label>Postcode </label>
+            <input type="text" name="post" id="post" placeholder="Postcode" ng-model="post" ng-pattern="/^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$/i" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.post.$dirty && form.post.$invalid || form.$submitted && form.post.$invalid ">
+                 <span class="error">Postcode is niet goed</span>
+            </div><br>
+          <label>Woonplaats </label>
+            <input type="text" name="woon" id="woon" placeholder="Woonplaats" ng-model="woon"
+            ng-pattern="/^[a-z]{1}[a-z]/i" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.woon.$dirty && form.woon.$invalid || form.$submitted && form.woon.$invalid ">
+                 <span class="error">Woonplaats is niet goed</span>
+            </div><br>
+          <label>Emailadres </label>
+            <input type="email" name="email" id="email" placeholder="Emailadres" ng-model="email" required>
+            <div class="grijs"></div>
+            <div class="error" ng-show="form.email.$dirty && form.email.$invalid || form.$submitted && form.email.$invalid ">
+                 <span class="error">Emailadres is niet goed</span>
+            </div><br><br>
+            <div class="center">
+              <button type="submit" class="" >Stuur</button>
+            </div>
+        </form>
+      </div>
+
+      <div class="table">
+        <div class="center">
+          <br><h1>Tabel</h1><br>
+        </div>
+        <table class="formulier">
+          <tr>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>Adres</th>
+            <th>num</th>
+            <th>Postcode</th>
+            <th>Plaats</th>
+            <th>Emailadres</th>
+          </tr>
+          <tr class="info">
+            <td id="1">{{voor}}</td>
+            <td id="2">{{achter}}</td>
+            <td id="3">{{adres}}</td>
+            <td id="4">{{num}}</td>
+            <td id="5">{{post}}</td>
+            <td id="6">{{woon}}</td>
+            <td id="7">{{email}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>
