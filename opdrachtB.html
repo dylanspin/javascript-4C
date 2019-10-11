@@ -25,62 +25,26 @@
         <img src="img/vuur4.png" class="opdr_img">
       </div>
 
-      <div class="form">
-        <div class="center">
-          <br><h1>Formulier</h1><br>
-        </div>
-        <form action="" method="post" name="form">
-          <label>Voornaam </label>
-            <input type="text" name="voor" id="voor" placeholder="voornaam" ng-pattern="/^[a-z]{1}[a-z]/i" ng-model="voor">
-            <div class="grijs"><span ng-show="false">fout</span></div><br>
-          <label>Achternaam </label>
-            <input type="text" name="achter" id="achter" placeholder="Achternaam" ng-pattern="/^[a-z]{1}[a-z]/i" ng-model="achter">
-            <div class="grijs"></div><br>
-          <label>Adres </label>
-            <input type="text" name="adres" id="adres" placeholder="Adres" ng-model="adres"
-            ng-pattern="/ ?[a-z]* ?[0-9]*/ig">
-            <div class="grijs"></div><br>
-          <label>Huisnummer</label>
-            <input type="number" name="huis" id="huis" placeholder="huisnummer" ng-model="num">
-            <div class="grijs"></div><br>
-          <label>Postcode </label>
-            <input type="text" name="post" id="post" placeholder="Postcode" ng-model="post"
-            ng-pattern="/^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$/i">
-            <div class="grijs"></div><br>
-          <label>Woonplaats </label>
-            <input type="text" name="woon" id="woon" placeholder="Woonplaats" ng-model="woon"
-            ng-pattern="/^[a-z]{1}[a-z]/i">
-            <div class="grijs"></div><br>
-          <label>Emailadres </label>
-            <input type="email" name="email" id="email" placeholder="Emailadres" ng-model="email">
-            <div class="grijs"></div><br>
-        </form>
-      </div>
-
       <div class="table">
         <div class="center">
           <br><h1>Tabel</h1><br>
+          <table class="formulier pos">
+            <tr>
+              <th>Prijs</th>
+              <th>Merk</th>
+              <th>Auto</th>
+              <th>Gewicht</th>
+              <th>num</th>
+            </tr>
+            <tr class="info">
+              <td id="1">{{prijs}}</td>
+              <td id="2">{{Merk}}</td>
+              <td id="3">{{Auto}}</td>
+              <td id="4">{{Gewicht}}</td>
+              <td id="5">{{num}}</td>
+            </tr>
+          </table>
         </div>
-        <table class="formulier">
-          <tr>
-            <th>Voornaam</th>
-            <th>Achternaam</th>
-            <th>Adres</th>
-            <th>num</th>
-            <th>Postcode</th>
-            <th>Plaats</th>
-            <th>Emailadres</th>
-          </tr>
-          <tr class="info">
-            <td id="1">{{voor}}</td>
-            <td id="2">{{achter}}</td>
-            <td id="3">{{adres}}</td>
-            <td id="4">{{num}}</td>
-            <td id="5">{{post}}</td>
-            <td id="6">{{woon}}</td>
-            <td id="7">{{email}}</td>
-          </tr>
-        </table>
       </div>
     </div>
 

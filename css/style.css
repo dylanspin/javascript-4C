@@ -75,6 +75,25 @@ div.grijs{
 .form:hover{
   transform: scale(1.05,1.05) translate(20%,150px);
 }
+/*button voor opdracht A*/
+.but_form{
+  border: 1px solid  rgb(30,215,96);
+  width: 125px;
+  height: 40px;
+  border-radius:10px;
+  font-size: 2em;
+  font-weight: 400;
+  background-color: #2E2E2E;
+  color: rgb(30,215,96);
+  transition: 0.3s;
+}
+.but_form:hover{
+  border:none;
+  color: white;
+  box-shadow: 0 4px 4px 0 #1ED760, 0 6px 15px 0 #1be362;
+  background-color: rgb(30,215,96,0.8);
+  transform: scale(1.05,1.05);
+}
 .error{
   text-align: center;
   font-size: 25px;
@@ -86,7 +105,7 @@ div.grijs{
 /*table*/
 .table{
   text-align: left;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   height: 600px;
   width: 950px;
@@ -101,6 +120,15 @@ div.grijs{
 .formulier{
   width: 85%;
   transform: translate(2.5%,0px);
+  float: left;
+}
+.pos{
+  position: relative;
+  left: 50%;
+  transform:translate(-50%,123px);
+}
+.pos:hover{
+    transform: scale(1.05,1.05) translate(-48%,123px);
 }
 td{
   font-size: 20px;
