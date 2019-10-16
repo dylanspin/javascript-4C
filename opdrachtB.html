@@ -8,7 +8,7 @@
     <script src="js/angular.min.js"></script>
     <script src="js/javascript.js"></script>
   </head>
-  <body ng-app="">
+  <body ng-app="myModule">
     <div class="mijnheader">
         <hr>
         <div class="center" style="margin-left:-100px;">
@@ -25,26 +25,26 @@
         <img src="img/vuur4.png" class="opdr_img">
       </div>
 
-      <div class="table">
+      <div class="table" style="transform:translate(300px,100px);" ng-controller="myController">
         <div class="center">
           <br><h1>Tabel</h1><br>
-          <table class="formulier pos">
+        </div>
+          <table class="formulier pos" style="transform:translate(-45%,0px);">
             <tr>
-              <th>Prijs</th>
-              <th>Merk</th>
-              <th>Auto</th>
-              <th>Gewicht</th>
-              <th>num</th>
+              <th ng-click="sortData('prijs')">Prijs</th>
+              <th ng-click="sortData('merk')">Merk</th>
+              <th ng-click="sortData('auto')">Auto</th>
+              <th ng-click="sortData('gewicht')">Gewicht</th>
+              <th ng-click="sortData('num')">num</th>
             </tr>
-            <tr class="info">
-              <td id="1">{{prijs}}</td>
-              <td id="2">{{Merk}}</td>
-              <td id="3">{{Auto}}</td>
-              <td id="4">{{Gewicht}}</td>
-              <td id="5">{{num}}</td>
+            <tr class="info" ng-repeat="auto in auto | orderBy:sortColumn:reverseSort">
+              <td>$ {{auto.prijs}}K</td>
+              <td>{{auto.merk}}</td>
+              <td>{{auto.auto}}</td>
+              <td>{{auto.gewicht}}</td>
+              <td>{{auto.num}}</td>
             </tr>
           </table>
-        </div>
       </div>
     </div>
 

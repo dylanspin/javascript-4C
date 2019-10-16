@@ -1,3 +1,5 @@
+
+/*Dit is niet super netjes had 10 keer beter gekund */
 body{
     max-width: 100%;
     overflow-x: hidden;
@@ -43,7 +45,9 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
   transform: scale(1.05,1.05) translate(100px,0px);
   outline:none;
 }
-div.grijs{
+
+
+.grijs{
   width: 85%;
   height: 5px;
   margin-left: 7.5%;
@@ -127,11 +131,10 @@ div.grijs{
   left: 50%;
   transform:translate(-50%,123px);
 }
-.pos:hover{
-    transform: scale(1.05,1.05) translate(-48%,123px);
-}
+
 td{
   font-size: 20px;
+  max-width: 30px;
   transform: translate(2.3%,0px);
 }
 td:hover{
@@ -143,6 +146,9 @@ tr.info:hover{
 th{
   padding-right: 30px;
   font-size: 18px;
+}
+th:hover{
+  transform: scale(1.05,1.05);
 }
 .mijnheader{
   z-index: 100;
