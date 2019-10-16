@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Opdracht-B</title>
+    <title>Opdracht-C</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/javascript.js"></script>
   </head>
-  <body ng-app="myModule">
+  <body ng-app="myModulee">
     <div class="mijnheader">
         <hr>
         <div class="center" style="margin-left:-100px;">
           <button type="submit" class="header"><a href="opdrachtA.html">Opdracht-A</a></button>
-          <button type="submit" class="header"><a href="opdrachtC.php">Opdracht-C</a></button>
+          <button type="submit" class="header"><a href="opdrachtB.html">Opdracht-B</a></button>
           <button type="submit" class="header"><a href="eindopdracht.html">Eindopdracht</a></button>
         </div>
         <hr>
@@ -21,9 +21,13 @@
     <div class="content">
       <div class="center">
         <img src="img/vuur2.png" class="opdr_img">
-          <div class="kop">Opdracht B</div>
+          <div class="kop">Opdracht C</div>
         <img src="img/vuur4.png" class="opdr_img">
       </div>
+
+      <?php
+         include_once('bedrijf.php');
+      ?>
 
       <div class="table" style="transform:translate(300px,100px);" ng-controller="myController">
         <div class="center">
@@ -31,22 +35,21 @@
         </div>
           <table class="formulier pos" style="transform:translate(-45%,0px);">
             <tr>
-              <th ng-click="sortData('prijs')">Prijs</th>
-              <th ng-click="sortData('merk')">Merk</th>
-              <th ng-click="sortData('auto')">Auto</th>
-              <th ng-click="sortData('gewicht')">Gewicht</th>
+              <th ng-click="sortData('bedrijfsnaam')">Bedrijfsnaam</th>
+              <th ng-click="sortData('adress')">Adres&emsp;&emsp;</th>
+              <th ng-click="sortData('woonplaats')">Woonplaats</th>
+              <th ng-click="sortData('telnr')">Telnr</th>
               <th ng-click="sortData('num')">num</th>
             </tr>
-            <tr class="info" ng-repeat="auto in auto | orderBy:sortColumn:reverseSort">
-              <td>$ {{auto.prijs}}K</td>
-              <td class="uper">{{auto.merk}}</td> <!--zelf vind ik dat upper lelijk is-->
-              <td>{{auto.auto}}</td>
-              <td>{{auto.gewicht}}</td>
-              <td>{{auto.num}}</td>
+            <tr class="info" ng-repeat="bedrijf in bedrijf | orderBy:sortColumn:reverseSort">
+              <td>{{bedrijf.bedrijfsnaam}}</td>
+              <td>{{bedrijf.adress}}</td>
+              <td>{{bedrijf.woonplaats}}</td>
+              <td>{{bedrijf.telnr}}</td>
+              <td>{{bedrijf.num}}</td>
             </tr>
           </table>
       </div>
     </div>
-
   </body>
 </html>

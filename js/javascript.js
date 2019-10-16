@@ -1,4 +1,4 @@
-/// <reference path="js/angular.min.js"/>
+
 var app = angular
           .module("myModule",[])
           .controller("myController", function($scope){
@@ -15,7 +15,7 @@ var app = angular
               { prijs:45.400,merk:"BMW",auto:"turismo",gewicht:1705,num:10,kleur:"blauw",brandstof:"benzine"},
             ];
 
-            $scope.auto = auto; $scope.sortColumn = "prijs"; $scope.reverseSort = false;
+            $scope.auto = auto; $scope.sortColumn = "num"; $scope.reverseSort = false;
 
             $scope.sortData = function (colom){
               $scope.reverseSort = ($scope.sortColumn == colom) ? !scope.reverseSort : false;
