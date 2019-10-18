@@ -2,14 +2,14 @@
   include_once('include.php');
 
   $info = json_decode(file_get_contents("php://input"));
-
-    $num = mysqli_real_escape_string($conn,$info->num);
-
-    $query = "DELETE FROM persoon WHERE num=".$num.";";
-    if(mysqli_query($conn,$query)){
-      echo "Het is gedelete!";
+  
+  if(count($info) > 0) {
+    $id = $info->id;
+    $query = "DELETE FROM persoon WHERE id='$id'";
+    if(mysqli_query($conn, $query)) {
+      echo 'De rij is verwijderd uit de database.';
+    } else {
+      echo 'Error';
     }
-    else{
-      echo "Error";
-    }
+  }
 ?>

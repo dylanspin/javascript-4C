@@ -10,11 +10,11 @@
     $postcode = mysqli_real_escape_string($conn,$info->postcode);
     $woonplaats = mysqli_real_escape_string($conn,$info->woonplaats);
     $telefoonNum = mysqli_real_escape_string($conn,$info->telefoonNum);
-    $btnName = mysqli_real_escape_string($conn,$info->btnName);
+
 
     $query = "INSERT INTO `persoon` (`voornaam`,`achternaam`,`straat`,`huisnummer`,`postcode`,`woonplaats`,`telefoonnummer`) VALUES ('".$voor."','".$achternaam."','".$straat."','".$huisnummer."','".$postcode."','".$woonplaats."','".$telefoonNum."');";
     if(mysqli_query($conn,$query)){
-      echo "Het zit in de database1!";
+      echo "Het zit in de database!";
     }
     else{
       echo "Error";

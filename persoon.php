@@ -47,7 +47,6 @@
       }
   }
 
-
   $sql = "SELECT voornaam,achternaam,straat,huisnummer,postcode,woonplaats,telefoonnummer,tijdToegevoegd,id FROM `persoon`;";
   $result = $conn->query($sql);
 

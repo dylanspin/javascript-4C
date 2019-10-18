@@ -10,7 +10,7 @@
     <script src="js/javascript.js"></script>
     <link rel="icon"type="image/png" href="img/js.png">
   </head>
-  <body ng-app="myModule">
+  <body ng-app="myModule" ng-controller="myController">
     <div class="mijnheader">
         <hr>
         <div class="center" style="margin-left:-100px;">
@@ -83,19 +83,18 @@
             </div><br>
 
             <label>Update</label>
-              <input type="number"name="num"id="num"placeholder="Update"ng-model="numUpdate">
+              <input type="number"name="updateNum"id="updateNum"placeholder="Update"ng-model="updateNum">
               <div class="grijs"></div>
               <br><br>
 
             <div class="center">
-              <input type="submit" name="stuur" value="{{btnName}}" ng-click="insertdata() ">&emsp;
-              <input type="submit" name="Update" value="Update" ng-click="insertdata()">
+              <input type="submit" name="stuur" value="Stuur" ng-click="insertData()">&emsp;
+              <input type="submit" name="Update" value="Update" ng-click="updateData()">
             </div>
         </form>
       </div>
 
-
-      <div class="table" ng-controller="myController">
+      <div class="table" ng-init="show_data()">
         <div class="center">
           <br><h1>Tabel</h1><br>
         </div>
@@ -109,10 +108,10 @@
               <th ng-click="sortData('postcode')">Postcode</th>
               <th ng-click="sortData('woonplaats')">Woonplaats</th>
               <th ng-click="sortData('telnr')">Telefoonnum</th>
-              <th ng-click="sortData('num')">num</th>
+              <th ng-click="sortData('id')">num</th>
             </tr>
-            <tr class="info" ng-repeat="persoon in persoon | orderBy:sortColumn:reverseSort">
-              <td ng-click="delete()">{{persoon.delete}}-</td>
+            <tr class="info" ng-repeat="persoon in persoonen | orderBy:sortColumn:reverseSort">
+              <td ng-click="delete_data(persoon.id)">{{persoon.delete}}-</td>
               <td>{{persoon.voornaam}}</td>
               <td>{{persoon.achternaam}}</td>
               <td>{{persoon.straat}}</td>
@@ -120,7 +119,7 @@
               <td>{{persoon.postcode}}</td>
               <td>{{persoon.woonplaats}}</td>
               <td>{{persoon.telnr}}</td>
-              <td class="tooltip">{{persoon.num}}<span class="tooltiptext">{{persoon.tijd}}</span></td>
+              <td class="tooltip">{{persoon.id}}<span class="tooltiptext">{{persoon.tijd}}</span></td>
             </tr>
           </table>
       </div>
