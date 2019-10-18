@@ -1,12 +1,12 @@
 
 /*Dit is niet super netjes had 10 keer beter gekund */
 body{
-    max-width: 100%;
-    overflow-x: hidden;
-    font-family: "Roboto",sans-serif;
-    margin: 0;
-    color: white;
-    background-color: #1A1A1A;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Roboto",sans-serif;
+  margin: 0;
+  color: white;
+  background-color: #1A1A1A;
 }
 a{
   text-decoration: none;
@@ -45,6 +45,9 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
   transform: scale(1.05,1.05) translate(100px,0px);
   outline:none;
 }
+input[type="text"].num{
+transform: translate(10px,0px);
+}
 .uper{
   text-transform: uppercase;
 }
@@ -72,7 +75,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
 .form{
   border-radius: 5%;
   width: 400px;
-  min-height: 600px;
+  min-height: 650px;
   background-color:#2e2e2e;
   transform: translate(20%,150px);
   transition: 0.3s;
@@ -81,7 +84,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
   transform: scale(1.05,1.05) translate(20%,150px);
 }
 /*button voor opdracht A*/
-.but_form{
+.but_form,input[type="submit"]{
   border: 1px solid  rgb(30,215,96);
   width: 125px;
   height: 40px;
@@ -92,7 +95,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
   color: rgb(30,215,96);
   transition: 0.3s;
 }
-.but_form:hover{
+.but_form:hover,input[type="submit"]:hover{
   border:none;
   color: white;
   box-shadow: 0 4px 4px 0 #1ED760, 0 6px 15px 0 #1be362;
@@ -151,6 +154,33 @@ th{
 th:hover{
   transform: scale(1.05,1.05);
 }
+/*zij bar om tijdToegevoegd te laten zien*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #2E2E2E;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  left: -40px;
+  z-index: 100;
+}
+.tooltiptext{
+  z-index: 100;
+  font-size: 0.6em;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .mijnheader{
   z-index: 100;
   padding-top: 20px;
